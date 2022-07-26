@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import movieReducer from "./slices/moviesSlice";
-import filteredMovieReducer from "./slices/searchMovieSlice";
+import listMovieReducer from "./features/listMovie/slice";
+import filterMovieReducer from "./features/filterMovie/slice";
 
 export default configureStore({
     reducer: {
-        movies: movieReducer,
-        filteredMovies: filteredMovieReducer
+        movies: listMovieReducer,
+        filteredMovies: filterMovieReducer
     }
 });

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Input } from "reactstrap";
 import { BiLoaderCircle } from "react-icons/bi";
 import SearchList from "./SearchList";
-import { searchMovie, initiateSearchMovieState } from "../../slices/searchMovieSlice";
+import { filterMovie } from "../../features/filterMovie/thunk";
 import MovieDetail from "../MovieDetail";
 
 export default function Search() {
@@ -20,7 +20,6 @@ export default function Search() {
     }
     useEffect(() => {
         setMovieName("");
-        dispatch(initiateSearchMovieState());
     }, [dispatch]);
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -28,7 +27,7 @@ export default function Search() {
                 return;
             }
 
-            dispatch(searchMovie(movieName));
+            dispatch(filterMovie(movieName));
         }, 500);
 
         return () => clearTimeout(timer);

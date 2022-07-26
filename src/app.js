@@ -3,13 +3,13 @@ import { Row, Col, Card, CardImg, CardBody, Container, Button } from "reactstrap
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "@mui/material/Pagination";
 import Box from "@mui/material/Box";
-import Layout from "../layout";
-import { fetchMovies } from "../slices/moviesSlice";
-import MovieDetail from "../components/MovieDetail";
-import { getGenres } from "../utils/helpers";
-import { posterImagePath } from "../utils/paths";
+import Layout from "./layout";
+import { getPopularMovies } from "./features/listMovie/thunk";
+import MovieDetail from "./component/MovieDetail";
+import { getGenres } from "./utils/helpers";
+import { posterImagePath } from "./constants/paths";
 
-export default function Home() {
+export default function App() {
     const dispatch = useDispatch();
     const { loading, movies, error } = useSelector(state => state.movies);
     const { results, total_pages } = movies;
@@ -34,7 +34,7 @@ export default function Home() {
         }
     }
     useEffect(() => {
-        dispatch(fetchMovies());
+        dispatch(getPopularMovies(1));
     }, [dispatch]);
     useEffect(() => {
         setMovieDetail(null);
@@ -95,7 +95,7 @@ export default function Home() {
         return content;
     }
     const handlePaginationChange = (event, pageNo) => {
-        dispatch(fetchMovies(pageNo));
+        dispatch(getPopularMovies(pageNo));
         setPage(pageNo);
     }
 

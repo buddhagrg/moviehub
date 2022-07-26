@@ -1,6 +1,6 @@
 import React from "react";
 import { getGenres } from "../../utils/helpers";
-import { posterImagePath } from "../../utils/paths";
+import { posterImagePath } from "../../constants/paths";
 
 export default function SearchList({ movies, error, getMovieDetails }) {
     const formatList = () => {

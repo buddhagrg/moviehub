@@ -1,4 +1,4 @@
-import GenreJsonList from "./genres.json";
+import GenreJsonList from "../constants/genres.json";
 
 export const getGenres = (genreIds) => {
     if (genreIds.length <= 0) {
