@@ -10,15 +10,15 @@ export default function MovieDetail({ movieDetailModal, closeMovieDetailModal, m
             toggle={closeMovieDetailModal}
             size="xl"
             centered
-            external={
-                <button
-                    className="close"
-                    onClick={closeMovieDetailModal}
-                    style={{ position: 'absolute', right: '15px', top: '15px' }}
-                >×</button>
-            }
         >
             <ModalBody className="movie-detail-body">
+                <div>
+                    <button
+                        className="close"
+                        onClick={closeMovieDetailModal}
+                        style={{ position: 'absolute', right: '15px', top: '15px' }}
+                    >×</button>
+                </div>
                 <Row>
                     <Col lg={4} sm={12} className="text-center">
                         <img

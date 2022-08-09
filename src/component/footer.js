@@ -4,8 +4,9 @@ import { Container } from "reactstrap";
 export default function Footer() {
     return (
         <footer>
-            <Container>
-                <p>&#169; MovieHub</p>
+            <Container className="d-flex p-3">
+                <div><p>&#169; MovieHub</p></div>
+                <div className="ms-auto"><a href="https://github.com/buddhagrg/moviehub" rel="external">Github</a></div>
             </Container>
         </footer>
     );

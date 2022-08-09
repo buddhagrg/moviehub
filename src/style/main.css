@@ -4,14 +4,20 @@ footer {
 }
 
 header .navbar-brand {
-    color: white !important;
+    color: white;
 }
 
 footer {
-    padding: 5px;
-    margin-top: 10px;
+    margin-top: 40px;
     color: white;
-    text-align: center;
+}
+
+footer a {
+    color: #ededed;
+}
+
+footer a:hover {
+    color: #ffffff;
 }
 
 #search-list {
@@ -37,12 +43,13 @@ footer {
 }
 
 .home-page-card {
-    width: 90%;
+    width: 95%;
     height: 340px;
     padding: 0px !important;
     border: 5px solid #1a3f73;
     border-radius: 8px;
     background-color: #1a3f73;
+    margin: 0px auto;
 }
 
 .home-page-card-image {
@@ -128,5 +135,12 @@ footer {
     100% {
         -webkit-transform: rotate(359deg);
         transform: rotate(359deg);
+    }
+}
+
+@media screen and (max-width:576px) {
+    .home-page-card {
+        width: 70% !important;
+        margin: 0px auto;
     }
 }
